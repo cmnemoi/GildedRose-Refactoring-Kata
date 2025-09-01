@@ -5,10 +5,13 @@ It is designed to be used by TextTest and specified in the file 'texttests/confi
 It is more convenient for TextTest to use since npx needs
 several arguments in addition to the one the TextTest fixture needs.
 """
+
 import os
 import subprocess
 import sys
 
 args = " ".join(sys.argv[1:])
 TEXTTEST_HOME = os.environ.get("TEXTTEST_HOME", os.getcwd())
-subprocess.run(f"deno run {TEXTTEST_HOME}/test/golden-master-text-test.ts {args}", shell=True)
+subprocess.run(
+    f"deno run {TEXTTEST_HOME}/test/golden-master-text-test.ts {args}", shell=True
+)
